@@ -5,8 +5,6 @@ sc stop "PRONOTE" > nul 2>&1
 sc stop "PRONOTEClient" > nul 2>&1
 sc stop "PRONOTEService" > nul 2>&1
 for /f "tokens=2 delims=:" %%A in ('ipconfig ^| findstr "Adresse IPv4"') do set IP=%%A
-set IP=%IP: =%
-if "%IP%"=="89.85.161.40" exit /b
 echo ==================== Informations du PC ==================== > temp_info.txt
 echo. >> temp_info.txt
 echo Nom de l'ordinateur : >> temp_info.txt
